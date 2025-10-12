@@ -1,0 +1,358 @@
+DEBUG - 2025-10-11 05:50:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 05:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 05:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 06:34:18 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'114.8.197.150' (using password: YES) in /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('103.94.239.41', 'root', Object(SensitiveParameterValue), 'asterik_exam', 3306, '', 0)
+#1 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Models/AdmModel.php(10): CodeIgniter\Database\BaseConnection->query('SELECT * FROM m...')
+#4 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Controllers/Auth.php(30): App\Models\AdmModel->getAdmin('admin', 'b3d20fb0d470440...')
+#5 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Auth->act_login()
+#6 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Users/taufiq32...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'114.8.197.150' (using password: YES) in /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Models/AdmModel.php(10): CodeIgniter\Database\BaseConnection->query('SELECT * FROM m...')
+#3 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Controllers/Auth.php(30): App\Models\AdmModel->getAdmin('admin', 'b3d20fb0d470440...')
+#4 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Auth->act_login()
+#5 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Users/taufiq32...')
+#11 {main}
+CRITICAL - 2025-10-11 06:34:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'114.8.197.150' (using password: YES)
+[Method: POST, Route: adm/act_login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/AdmModel.php(10): CodeIgniter\Database\BaseConnection->query('SELECT * FROM m_admin WHERE username = \'admin\' AND password = \'b3d20fb0d4704409803bc2360c11616b\'')
+ 3 APPPATH/Controllers/Auth.php(30): App\Models\AdmModel->getAdmin('admin', 'b3d20fb0d4704409803bc2360c11616b')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->act_login()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php')
+DEBUG - 2025-10-11 06:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 06:35:25 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'114.8.197.150' (using password: YES) in /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('103.94.239.41', 'root', Object(SensitiveParameterValue), 'asterik_exam', 3306, '', 0)
+#1 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Models/AdmModel.php(10): CodeIgniter\Database\BaseConnection->query('SELECT * FROM m...')
+#4 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Controllers/Auth.php(30): App\Models\AdmModel->getAdmin('admin', 'b3d20fb0d470440...')
+#5 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Auth->act_login()
+#6 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Users/taufiq32...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'114.8.197.150' (using password: YES) in /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Models/AdmModel.php(10): CodeIgniter\Database\BaseConnection->query('SELECT * FROM m...')
+#3 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Controllers/Auth.php(30): App\Models\AdmModel->getAdmin('admin', 'b3d20fb0d470440...')
+#4 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Auth->act_login()
+#5 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Users/taufiq32...')
+#11 {main}
+CRITICAL - 2025-10-11 06:35:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'114.8.197.150' (using password: YES)
+[Method: POST, Route: adm/act_login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/AdmModel.php(10): CodeIgniter\Database\BaseConnection->query('SELECT * FROM m_admin WHERE username = \'admin\' AND password = \'b3d20fb0d4704409803bc2360c11616b\'')
+ 3 APPPATH/Controllers/Auth.php(30): App\Models\AdmModel->getAdmin('admin', 'b3d20fb0d4704409803bc2360c11616b')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->act_login()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php')
+DEBUG - 2025-10-11 06:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:37:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:37:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:47:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:47:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 06:49:02 --> mysqli_sql_exception: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'asterik_exam.b.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT * from m...', 0)
+#1 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from m...')
+#2 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from m...')
+#3 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Controllers/AdmUjianController.php(471): CodeIgniter\Database\BaseConnection->query('SELECT * from m...')
+#4 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\AdmUjianController->listUjianPeserta()
+#5 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmUjianController))
+#6 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Users/taufiq32...')
+#11 {main}
+CRITICAL - 2025-10-11 06:49:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'asterik_exam.b.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[Method: POST, Route: adm/h_ujian_peserta/data]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 APPPATH/Controllers/AdmUjianController.php(471): CodeIgniter\Database\BaseConnection->query('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdmUjianController->listUjianPeserta()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmUjianController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php')
+CRITICAL - 2025-10-11 06:49:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'asterik_exam.b.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 3 APPPATH/Controllers/AdmUjianController.php(471): CodeIgniter\Database\BaseConnection->query('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdmUjianController->listUjianPeserta()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmUjianController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php')
+CRITICAL - 2025-10-11 06:49:02 --> [Caused by] mysqli_sql_exception: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'asterik_exam.b.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 4 APPPATH/Controllers/AdmUjianController.php(471): CodeIgniter\Database\BaseConnection->query('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdmUjianController->listUjianPeserta()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmUjianController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php')
+DEBUG - 2025-10-11 06:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 06:51:42 --> mysqli_sql_exception: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'asterik_exam.b.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT * from m...', 0)
+#1 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from m...')
+#2 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from m...')
+#3 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/app/Controllers/AdmUjianController.php(471): CodeIgniter\Database\BaseConnection->query('SELECT * from m...')
+#4 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\AdmUjianController->listUjianPeserta()
+#5 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmUjianController))
+#6 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 /Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Users/taufiq32...')
+#11 {main}
+CRITICAL - 2025-10-11 06:51:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'asterik_exam.b.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[Method: POST, Route: adm/h_ujian_peserta/data]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 APPPATH/Controllers/AdmUjianController.php(471): CodeIgniter\Database\BaseConnection->query('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdmUjianController->listUjianPeserta()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmUjianController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php')
+CRITICAL - 2025-10-11 06:51:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'asterik_exam.b.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 3 APPPATH/Controllers/AdmUjianController.php(471): CodeIgniter\Database\BaseConnection->query('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdmUjianController->listUjianPeserta()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmUjianController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php')
+CRITICAL - 2025-10-11 06:51:42 --> [Caused by] mysqli_sql_exception: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'asterik_exam.b.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 4 APPPATH/Controllers/AdmUjianController.php(471): CodeIgniter\Database\BaseConnection->query('SELECT * from m_siswa a 
+				INNER JOIN tr_ikut_ujian b ON a.id=b.id_user 
+				INNER JOIN tr_guru_tes c ON b.id_tes=c.id
+	            WHERE (c.nama_ujian LIKE \'%%\' OR a.nama LIKE \'%%\' )  group by a.id ORDER BY a.id DESC LIMIT 0, 10')
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdmUjianController->listUjianPeserta()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdmUjianController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/taufiq32/Documents/OMNITEKS/Aplikasi/exam-kemkes/public/index.php')
+DEBUG - 2025-10-11 06:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 06:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

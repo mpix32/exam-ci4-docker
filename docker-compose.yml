@@ -27,12 +27,12 @@ services:
       - ./php/php.ini:/usr/local/etc/php/conf.d/custom.ini
     environment:
       - CI_ENVIRONMENT=development
-      - database.default.hostname=${DB_HOST}
-      - database.default.database=${DB_NAME}
-      - database.default.username=${DB_USER}
-      - database.default.password=${DB_PASSWORD}
-      - database.default.port=${DB_PORT}
-      - app.baseURL=${APP_BASE_URL}
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
+      - APP_BASE_URL=${APP_BASE_URL}
     networks:
       - codeigniter-network
     restart: unless-stopped

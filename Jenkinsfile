@@ -57,7 +57,7 @@ pipeline {
         sshagent(['dev-ssh-key']) {
           sh """
           ssh -o StrictHostKeyChecking=no ${TEST_SERVER} '
-            cd /opt/api-ipenpoto &&
+            cd /opt/exam &&
             docker pull ${IMAGE}:develop &&
             docker stop exam-ci4-test || true &&
             docker rm exam-ci4-test || true &&

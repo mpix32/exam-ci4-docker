@@ -4,7 +4,7 @@ pipeline {
   environment {
     REGISTRY = "registry.local:5000"
     IMAGE = "registry.local:5000/exam-ci4"
-    TEST_SERVER = "deploy@10.10.100.30"   // bisa ganti kalau mau test server lain
+    TEST_SERVER = "deploy@10.10.100.10"   // bisa ganti kalau mau test server lain
   }
 
   stages {
